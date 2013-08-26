@@ -15,10 +15,10 @@ def mult(arr)
 end
 
 def factorial(num)
-	if num = 0
+	if num == 0
 	return 0
-	elsif num = 1
+	elsif num == 1
 	return 1
 	end
-	num.factorial*(num-1).factorial
+	factorial(num-1)*num
 end
