@@ -55,9 +55,11 @@ end
 describe "#multiply" do
 
   it "multiplies two numbers" do 
+    mult([4,7]) == 28
   end
 
   it "multiplies several numbers" do
+    mult([4,2,3]) == 24
   end
 
 end
@@ -66,6 +68,7 @@ end
 describe "#factorial" do
 
   it "computes the factorial of 0" do
+    factorial(0)
   end
 
   it "computes the factorial of 1" do
