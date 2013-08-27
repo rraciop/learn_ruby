@@ -16,20 +16,3 @@ def translate(word)
 
 
 end
-
-
-# def translate(word)
-# 	vowels = %w{ a e i o u }
-# 	if vowels.include?(word[0])
-# 		pigstring = "#{word}#{word[0]}y"
-# 		return pigstring
-# 	elsif !vowels.include?(word[0]) && !vowels.include?(word[1])
-# 		pigstring = "#{word}#{word[0]}#{word[1]}ay"
-# 		return pigstring[2..-1]
-# 	else 	
-# 		pigstring = "#{word}#{word[0]}ay"
-# 		return pigstring[1..-1]
-# 	end
-# end
-
-p translate("cherry")
