@@ -49,7 +49,6 @@ class RPNCalculator
 
 	def tokens(string)
 		operators = %w{+ * - /}
-		#@token = string.split.each.map{|x| operators.include?(x) ? x : x.to_i : x=":"+x.to_s}
 		@token = string.split.each.map do |x| 
 			if operators.include?(x)
 			x.to_sym
@@ -60,19 +59,22 @@ class RPNCalculator
 	end
 
 	def evaluate(string)
+		@value = 0
 		string = tokens(string)
 		string.each.map do |x|
 			if x == :+
-			calculator.plus
+			self.plus
 			elsif x == :*
-			calculator.times
+			self.times
 			elsif x == :/
-			calculator.divide
+			self.divide
 			elsif x == :-
-			calculator.minus
+			self.minus
+			elsif x.is_a? Integer
+			self.push(x)
 			end
 		end
-		return string
+		return @value
 
 	end
 
@@ -81,3 +83,5 @@ class RPNCalculator
 	end
 
 end
+
+
